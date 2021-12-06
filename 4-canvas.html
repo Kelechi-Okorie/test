@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const canvas = document.querySelector('#canvas');
+        const width = canvas.width = window.innerWidth;
+        const height = canvas.height = window.innerHeight;
+        const ctx = canvas.getContext('2d');
+
+        let x = 50;
+        let y = 50;
+        const radius = 50;
+        const xSpeed = 2 ;
+
+
+        function render(time) {
+            ctx.clearRect(0, 0, width, height);
+
+            time = time * 0.001;
+
+            ctx.beginPath();
+            //ctx.arc(x, y, radius, span, direction)
+            ctx.arc(x, y, radius, Math.PI * 2, false);
+            ctx.fill();
+
+            if(x >= width - radius) {
+                x = width - radius;
+            } else {
+                x += xSpeed;
+            }
+
+            requestAnimationFrame(render);
+        }
+
+        render();
+
+    </script>
+</body>
+
+</html>
