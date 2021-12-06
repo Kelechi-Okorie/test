@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>No 1</h3>
+
+    <script>
+
+        let results;
+
+        const fetchPhotos = (day) => {
+            fetch('https://jsonplaceholder.typicode.com/photos?_page=0&_limit=100').then(response => {
+                return response.json();
+            }).then(photos => {
+                // console.log(data);
+                displayPhotos(photos, day)
+            })
+        }
+
+        const displayPhotos = (photos, day) => {
+
+            const isOdd = day == 'monday' || day == 'wednesday' || day == 'friday' ? true : false;
+
+            const result = photos.filter((photo, index) => {
+                
+
+            })
+            
+            console.log(result);
+
+
+        }
+
+        fetchPhotos('tuesday');
+
+    </script>
+</body>
+
+</html>
