@@ -29,8 +29,7 @@
             const isOdd = day == 'monday' || day == 'wednesday' || day == 'friday' ? true : false;
 
             const result = photos.filter((photo, index) => {
-                
-
+                return isOdd ? photo.id % 2 === 1 : photo.id % 2 === 0;
             })
             
             console.log(result);
@@ -38,7 +37,7 @@
 
         }
 
-        fetchPhotos('tuesday');
+        fetchPhotos('dkjf;akfjafj');
 
     </script>
 </body>
